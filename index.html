@@ -88,10 +88,13 @@
     }
   </style>
   <body>
-    <main id="container"></main>
+    <main id="container">
+      <!-- Контент -->
+    </main>
   </body>
   <script>
     const container = document.querySelector('#container');
+
     initApp();
 
     const fields = [
@@ -103,6 +106,7 @@
     ];
 
     function initApp() {
+      // Cоздание основных секций
       const infoSection = document.createElement('section');
       infoSection.classList.add('info-section');
 
@@ -122,6 +126,7 @@
     }
 
     function createPopup() {
+      // Создание фона и самой модалки
       const popup = document.createElement('div');
       popup.classList.add('popup');
       document.body.append(popup);
@@ -140,6 +145,7 @@
       const form = document.createElement('form');
       popupContainer.append(form);
 
+      // Добавление полей с инпутами
       fields.forEach((f, i) => {
         const field = document.createElement('div');
         field.classList.add('field');
@@ -180,8 +186,8 @@
     }
 
     function getFormInfo(form) {
+      // Сбор информации с формы
       const children = Array.from(form.children);
-      console.log(children);
       const data = {};
 
       children.forEach((c) => {
@@ -202,6 +208,7 @@
     }
 
     function showData(data) {
+      // Отображение данных формы
       const infoSection = document.querySelector('.info-section');
       infoSection.innerHTML = '';
 
